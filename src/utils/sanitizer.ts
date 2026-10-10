@@ -16,7 +16,10 @@ import { MAX_SNIPPET_LENGTH } from "../config/constants.js";
  * Strips all HTML tags from a string.
  */
 export function stripHtmlTags(html: string): string {
-  return html.replace(/<[^>]+>/g, "");
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, "");
 }
 
 /**

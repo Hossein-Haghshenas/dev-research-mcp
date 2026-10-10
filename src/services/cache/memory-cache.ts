@@ -13,8 +13,8 @@
  * - Lazy eviction: expired entries are cleaned on access, not via timers
  */
 
-import { CACHE_MAX_ENTRIES, CACHE_TTL_MS } from "../config/constants.js";
-import { logger } from "../utils/logger.js";
+import { CACHE_MAX_ENTRIES, CACHE_TTL_MS } from "../../config/constants.js";
+import { logger } from "../../utils/logger.js";
 
 interface CacheEntry<T> {
   value: T;
@@ -62,7 +62,7 @@ export class MemoryCache<T = unknown> {
    * Stores a value in the cache with automatic TTL.
    * Evicts the oldest entry if the cache is at capacity.
    */
-  set(key: string, value: T): void {
+  set(key: string, value: T, ttlOverrideMs?: number): void {
     // If key already exists, delete it first to refresh position
     if (this.store.has(key)) {
       this.store.delete(key);
@@ -77,10 +77,18 @@ export class MemoryCache<T = unknown> {
       }
     }
 
+    const duration = ttlOverrideMs !== undefined ? ttlOverrideMs : this.ttlMs;
     this.store.set(key, {
       value,
-      expiresAt: Date.now() + this.ttlMs,
+      expiresAt: Date.now() + duration,
     });
+  }
+
+  /**
+   * Removes a specific key from the cache.
+   */
+  delete(key: string): boolean {
+    return this.store.delete(key);
   }
 
   /**
