@@ -132,8 +132,11 @@ function enforceTokenBudget(brief: string): string {
     truncated += line + "\n";
   }
 
+  // Remove any trailing empty section header
+  truncated = truncated.replace(/\n###\s+[^\n]+\s*$/g, "").trimEnd();
+
   // Re-append the guidance directive
-  truncated += `\n${AGENT_GUIDANCE}`;
+  truncated += `\n\n${AGENT_GUIDANCE}`;
 
   return truncated;
 }

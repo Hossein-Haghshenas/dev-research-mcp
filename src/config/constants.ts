@@ -7,10 +7,10 @@
 
 // ─── Network Timeouts ──────────────────────────────────────────
 /** Timeout for web search requests (DuckDuckGo, Brave, etc.) in milliseconds */
-export const WEB_SEARCH_TIMEOUT_MS = 4500;
+export const WEB_SEARCH_TIMEOUT_MS = 6000;
 
 /** Timeout for GitHub API requests in milliseconds */
-export const GITHUB_SEARCH_TIMEOUT_MS = 3500;
+export const GITHUB_SEARCH_TIMEOUT_MS = 5500;
 
 // ─── Search Result Limits ───────────────────────────────────────
 /** Number of search results per query in "quick" mode */
@@ -24,13 +24,13 @@ export const GITHUB_REPO_LIMIT = 2;
 
 // ─── Token Budget ───────────────────────────────────────────────
 /** Maximum characters per individual search snippet */
-export const MAX_SNIPPET_LENGTH = 250;
+export const MAX_SNIPPET_LENGTH = 150;
 
 /** Maximum characters for a GitHub repository description */
-export const MAX_REPO_DESCRIPTION_LENGTH = 150;
+export const MAX_REPO_DESCRIPTION_LENGTH = 100;
 
-/** Maximum total characters for the assembled brief (~450 tokens at 3.5 chars/token) */
-export const MAX_BRIEF_CHARACTERS = 1600;
+/** Maximum total characters for the assembled brief (~550 tokens at 3.5 chars/token) */
+export const MAX_BRIEF_CHARACTERS = 2200;
 
 /** Approximate characters-per-token ratio for English text */
 export const CHARS_PER_TOKEN = 3.5;

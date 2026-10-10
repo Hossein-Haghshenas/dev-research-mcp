@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { buildBrief, estimateTokens } from "../src/formatters/brief.formatter.js";
 import { buildEngineeringChecklist } from "../src/services/checklist.js";
+import { MAX_BRIEF_CHARACTERS } from "../src/config/constants.js";
 
 describe("Brief Formatter & Checklist", () => {
   it("builds a structured brief containing all 4 sections and agent guidance", () => {
@@ -57,7 +58,7 @@ describe("Brief Formatter & Checklist", () => {
       repositorySources: ["- **repo/test** (⭐ 100) — test description"],
     });
 
-    expect(brief.length).toBeLessThanOrEqual(1600);
+    expect(brief.length).toBeLessThanOrEqual(MAX_BRIEF_CHARACTERS);
     expect(brief).toContain("Guidance for Agent:");
   });
 

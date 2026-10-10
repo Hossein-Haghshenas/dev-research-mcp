@@ -5,7 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6.svg?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0-339933.svg?style=flat-square&logo=node.js)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![Tests: Vitest](https://img.shields.io/badge/tests-14%20passed-success.svg?style=flat-square&logo=vitest)](https://vitest.dev)
+[![Tests: Vitest](https://img.shields.io/badge/tests-15%20passed-success.svg?style=flat-square&logo=vitest)](https://vitest.dev)
 
 > **Zero-config, token-budgeted technical research and trade-off scout for AI coding agents.**  
 > Instant web & GitHub evidence without API keys, browser bloat, or context window exhaustion.
@@ -249,6 +249,9 @@ DevScout is fully operational without any environment variables. You can optiona
 
 ## 🏗️ Architecture & Design Principles
 
+<p align="center">
+  <img src="./assets/architecture.jpg" alt="DevScout MCP Architecture" width="850">
+</p>
 ```
   ┌────────────────────────────────────────────────────────┐
   │                 AI Coding Agent                        │
