@@ -1,0 +1,20 @@
+# Source code (only dist/ is published)
+src/
+tests/
+
+# Config files
+tsconfig.json
+vitest.config.ts
+.gitignore
+.eslintrc.json
+
+# Development
+.vscode/
+.idea/
+.env
+.env.local
+coverage/
+*.tgz
+
+# Design docs
+the-MCP-design.md
